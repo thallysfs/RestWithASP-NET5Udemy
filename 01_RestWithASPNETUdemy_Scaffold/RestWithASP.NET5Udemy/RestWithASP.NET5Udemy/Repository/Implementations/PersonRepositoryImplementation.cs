@@ -49,7 +49,7 @@ namespace RestWithASP.NET5Udemy.Repository.Implementations
         public Person Update(Person person)
         {
             // verificar se o objeto existe
-            if (!Exists(person.Id)) return new Person();
+            if (!Exists(person.Id)) return null;
 
             // encontrando e armazenando o registro
             var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
